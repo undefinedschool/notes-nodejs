@@ -1,4 +1,4 @@
-# Notas sobre NodeJS (Server-Side JavaScript)
+# [WIP] Notas sobre NodeJS (Server-Side JavaScript)
 
 ## Instalación
 
@@ -10,6 +10,8 @@ Para chequear que se haya instalado correctamente, correr el comando `node -v` e
 > **¿Qué es _LTS_?** Leer [LTS vs Current version](https://stackoverflow.com/questions/33661274/what-are-the-differences-between-long-term-support-lts-and-stable-versions-of)
 
 ## REPL
+
+_RePL_ viene de **R**ead, **E**val, **P**rint, **L**oop. Nos permite ejecutar Node en la terminal para probar cosas, como si se tratase de la consola del browser.
 
 ```js
 // 1
