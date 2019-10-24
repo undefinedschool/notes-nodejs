@@ -60,6 +60,7 @@ node server.js
 // 7
 // refactoring
 const http = require("http");
+const HOSTNAME = '127.0.0.1'
 const PORT = 8888;
 
 function onRequest(request, response) {
@@ -71,5 +72,5 @@ function onRequest(request, response) {
 
 http.createServer(onRequest).listen(PORT);
 
-console.log(`Server listening on port ${PORT}`);
+console.log(`Server listening on ${HOSTNAME}:${PORT}`);
 ```
