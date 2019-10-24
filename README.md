@@ -76,8 +76,11 @@ function onRequest(request, response) {
   response.end();
 }
 
-http.createServer(onRequest)
-  .listen(PORT, error => console.error('THIS IS FINE. 🔥🔥🔥🚒'));
-
-console.log(`Server listening on ${HOSTNAME}:${PORT}`);
+http.createServer(onRequest).listen(PORT, error => {
+  if (error) {
+    console.error('THIS IS FINE. 🔥🔥🔥🚒');
+  } else {
+    console.log(`Server listening on http://${HOSTNAME}:${PORT}`);
+  }
+});
 ```
