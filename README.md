@@ -60,6 +60,8 @@ http.createServer((request, response) => {
 node server.js
 ```
 
+- Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon)
+
 ```js
 // 7
 // refactoring
