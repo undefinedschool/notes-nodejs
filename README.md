@@ -13,6 +13,8 @@ Para chequear que se haya instalado correctamente, correr el comando `node -v` e
 
 _RePL_ viene de **R**ead, **E**val, **P**rint, **L**oop. Nos permite ejecutar Node en la terminal para probar cosas, como si se tratase de la consola del browser.
 
+- [https://flaviocopes.com/node-repl/](https://flaviocopes.com/node-repl/)
+
 ```js
 // 1
 console.log("Hello World");
@@ -72,7 +74,8 @@ function onRequest(request, response) {
   response.end();
 }
 
-http.createServer(onRequest).listen(PORT);
+http.createServer(onRequest)
+  .listen(PORT, error => console.error('THIS IS FINE. 🔥🔥🔥🚒'));
 
 console.log(`Server listening on ${HOSTNAME}:${PORT}`);
 ```
