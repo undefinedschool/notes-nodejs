@@ -8,3 +8,66 @@
 Para chequear que se haya instalado correctamente, correr el comando `node -v` en la consola (debe retornar una versión >= 12)
 
 > **¿Qué es _LTS_?** Leer [LTS vs Current version](https://stackoverflow.com/questions/33661274/what-are-the-differences-between-long-term-support-lts-and-stable-versions-of)
+
+## REPL
+
+```js
+// 1
+console.log("Hello World");
+```
+
+```bash
+// 2
+node helloworld.js
+```
+
+## Server
+
+```js
+// 3
+const http = require("http");
+
+// `createServer()` retorna un objeto, que tiene el método `listen`
+const server = http.createServer();
+server.listen(8888);
+```
+
+```bash
+// 4
+node server.js
+```
+
+```js
+// 5
+// en un archivo server.js
+const http = require("http");
+
+http.createServer((request, response) => {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World");
+  response.end();
+}).listen(8888);
+```
+
+```bash
+// 6
+node server.js
+```
+
+```js
+// 7
+// refactoring
+const http = require("http");
+const PORT = 8888;
+
+function onRequest(request, response) {
+  console.log("Request received.");
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World");
+  response.end();
+}
+
+http.createServer(onRequest).listen(PORT);
+
+console.log(`Server listening on port ${PORT}`);
+```
