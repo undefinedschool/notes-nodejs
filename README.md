@@ -39,6 +39,8 @@ server.listen(8888);
 node server.js
 ```
 
+- Cuando el servidor recibe un _request_, se dispara el evento [`request`](https://nodejs.org/api/http.html#http_event_request) y se ejecuta el _callback_ que recibe `createServer`. Este callback tiene 2 parámetros, los objetos `request` y `response`
+
 ```js
 // 5
 // en un archivo server.js
