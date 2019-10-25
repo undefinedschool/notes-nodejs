@@ -15,7 +15,7 @@ Para chequear que se haya instalado correctamente, correr el comando `node -v` e
 
 ## ¿Qué es NodeJS?
 
-_NodeJS_ ó _Node_ a secas, es principalmente un _entorno de ejecución_, algo que nos brinda el _contexto_ necesario para poder ejecutar código JavaScript por fuera de un browser. 
+_NodeJS_ ó _Node_ a secas, es principalmente un _entorno de ejecución_, es decir, nos brinda el _contexto_ necesario para poder ejecutar código JavaScript por fuera de un browser. 
 
 **Recordemos que JavaScript sólo funciona en el browser de forma _nativa_ y que se trata de un lenguaje de _alto nivel_**. Esto significa que realizar tareas como **_networking_**, acceder a hardware de red (ej: acceder a la tarjeta de red) para poder _escuchar requests_ y responder, **_acceder al file system_** del sistema operativo que estemos usando, para leer archivos (ej: un documento HTML) y enviarlos, poder levantar y correr un _server_, comunicarnos con una _base de datos_, desarrollar una _API_, etc, **no son capacidades propias de un lenguaje como JavaScript**.
 
@@ -37,7 +37,7 @@ Por lo tanto, podríamos decir que **Node** termina siendo un _entorno de ejecuc
 
 ## REPL
 
-_RePL_ viene de **R**ead, **E**val, **P**rint, **L**oop. Nos permite ejecutar Node en la terminal para probar cosas, como si se tratase de la consola del browser.
+_REPL_ es una sigla que viene de **R**ead, **E**val, **P**rint, **L**oop. Nos permite ejecutar Node en la terminal para probar cosas, como si se tratase de la consola del browser.
 
 - [https://flaviocopes.com/node-repl/](https://flaviocopes.com/node-repl/)
 
