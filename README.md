@@ -88,7 +88,10 @@ http.createServer((request, response) => {
 node server.js
 ```
 
+### Módulos 
+
 - Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon) para correr nuestro server
+- Instalar y probar el módulo [`chalk`](https://www.npmjs.com/package/chalk)
 
 ```js
 // 7
