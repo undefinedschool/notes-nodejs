@@ -53,6 +53,22 @@ console.log("Hello World");
 node helloworld.js
 ```
 
+## Node funciona de forma _asincrónica_
+
+```js
+// sync version
+const result = database.query("SELECT * FROM veryHugeTable");
+console.log("Hello World");
+```
+
+```js
+// async version
+database.query("SELECT * FROM hugetable", function(rows) {
+  const result = rows;
+});
+console.log("Hello World");
+```
+
 ## Server
 
 ```js
