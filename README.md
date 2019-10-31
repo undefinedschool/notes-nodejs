@@ -88,7 +88,7 @@ http.createServer((request, response) => {
 node server.js
 ```
 
-- Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon)
+- Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon) para correr nuestro server
 
 ```js
 // 7
