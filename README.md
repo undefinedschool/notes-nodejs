@@ -56,7 +56,7 @@ node helloworld.js
 ## Server
 
 ```js
-// 3
+// 3. server v1
 const http = require("http");
 
 // `createServer()` retorna un objeto, que tiene el método `listen`
@@ -72,7 +72,7 @@ node server.js
 - Cuando el servidor recibe un _request_, se dispara el evento [`request`](https://nodejs.org/api/http.html#http_event_request) y se ejecuta el _callback_ que recibe `createServer`. Este callback tiene 2 parámetros, los objetos `request` y `response`
 
 ```js
-// 5
+// 5. server v2
 // en un archivo server.js
 const http = require("http");
 
@@ -94,7 +94,7 @@ node server.js
 - Instalar y probar el módulo [`chalk`](https://www.npmjs.com/package/chalk)
 
 ```js
-// 7
+// 7. server v3
 // refactoring
 const http = require("http");
 const HOSTNAME = '127.0.0.1'
