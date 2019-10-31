@@ -53,7 +53,7 @@ console.log("Hello World");
 node helloworld.js
 ```
 
-## Node funciona de forma _asincrónica_
+## Node nos permite escribir código _asincrónico_
 
 ```js
 // sync version
