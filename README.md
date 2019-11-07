@@ -158,3 +158,5 @@ http.createServer(onRequest).listen(PORT, error => {
 ### NPM
 
 - Crear `package.json` usando el comando `npm init`
+- ⚠️ Agregar `node_modules` al `.gitignore`
+- ⚠️ Los archivos `package.json` y [`package-lock.json`](https://dev.to/saurabhdaware/but-what-the-hell-is-package-lock-json-b04) **deben comitearse SIEMPRE!**
