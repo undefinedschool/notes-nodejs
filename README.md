@@ -161,3 +161,8 @@ http.createServer(onRequest).listen(PORT, error => {
 - Crear `package.json` usando el comando `npm init`
 - ⚠️ Agregar `node_modules` al `.gitignore`
 - ⚠️ Los archivos `package.json` y [`package-lock.json`](https://dev.to/saurabhdaware/but-what-the-hell-is-package-lock-json-b04) **deben comitearse SIEMPRE!**
+
+### NPX
+
+- [Using npx and npm scripts to Reduce the Burden of Developer Tools](https://dev.to/azure/using-npx-and-npm-scripts-to-reduce-the-burden-of-developer-tools-57f9)
+- [npx vs npm - THE npx ADVANTAGE](https://dev.to/sarscode/npx-vs-npm-the-npx-advantage-1h0o)
