@@ -129,6 +129,7 @@ node server.js
 
 ### Módulos 
 
+- ⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
 - Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon) para correr nuestro server
 - Instalar y probar el módulo [`chalk`](https://www.npmjs.com/package/chalk)
 
