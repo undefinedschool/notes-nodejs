@@ -154,3 +154,7 @@ http.createServer(onRequest).listen(PORT, error => {
   }
 });
 ```
+
+### NPM
+
+- Crear `package.json` usando el comando `npm init`
