@@ -73,6 +73,25 @@ console.log("Hello World");
 
 Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
 
+```js
+// crear un archivo `payload.txt` con el contenido de https://bit.ly/node-txt
+const fs = require('fs');
+
+const { readFile } = fs;
+
+readFile('payload.txt', 'utf8', (err, data) => {
+  if (err) {
+    throw err
+  };
+  
+  console.log(`OK: ${filename}`);
+  console.log(data)
+});
+
+// const readFile = util.promisify(fs.readFile)
+// readFile("path/to/myfile").then(file => console.log(file))
+```
+
 ## Server
 
 ```js
