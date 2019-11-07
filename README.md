@@ -69,6 +69,10 @@ database.query("SELECT * FROM hugetable", function(rows) {
 console.log("Hello World");
 ```
 
+## File System
+
+Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
+
 ## Server
 
 ```js
