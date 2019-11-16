@@ -168,7 +168,53 @@ http.createServer(onRequest).listen(PORT, error => {
 - ⚠️ Agregar `node_modules` al `.gitignore`
 - ⚠️ Los archivos `package.json` y [`package-lock.json`](https://dev.to/saurabhdaware/but-what-the-hell-is-package-lock-json-b04) **deben comitearse SIEMPRE!**
 
+#### NPM Cheatsheet
+
+Instalar módulo como **dependencia** de nuestro proyecto
+
+```bash
+# son equivalentes
+npm install <MODULE_NAME>
+npm i <MODULE_NAME>
+```
+
+Instalar módulo como **dependencia de desarrollo** de nuestro proyecto
+
+```bash
+# son equivalentes
+npm install --save-dev <MODULE_NAME>
+npm i --save-dev <MODULE_NAME>
+```
+
+Instalar módulo de forma **global**
+
+```bash
+# son equivalentes
+npm install --global <MODULE_NAME>
+npm i -g <MODULE_NAME>
+```
+
+Actualizar módulo a la siguiente versión disponible, [según cómo tengamos declarada la dependencia en el `package.json`](https://docs.npmjs.com/about-semantic-versioning) (ver [_SEMVER_](https://semver.org))
+
+```bash
+npm update <MODULE_NAME>
+```
+
+Desinstalar una dependencia del proyecto
+
+```bash
+npm uninstall <MODULE_NAME>
+```
+
+Desinstalar un módulo global
+
+```bash
+npm uninstall -g <MODULE_NAME>
+```
+
 ### NPX
+
+_NPX_ sirve para ejecutar ciertos comandos (fundamentalmente relacionados a CLIs) sin tener la necesidad de descargar e instalar un módulo en nuestro proyecto
 
 - [Using npx and npm scripts to Reduce the Burden of Developer Tools](https://dev.to/azure/using-npx-and-npm-scripts-to-reduce-the-burden-of-developer-tools-57f9)
 - [npx vs npm - THE npx ADVANTAGE](https://dev.to/sarscode/npx-vs-npm-the-npx-advantage-1h0o)
