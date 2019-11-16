@@ -94,6 +94,8 @@ readFile('payload.txt', 'utf8', (err, data) => {
 
 ## Server
 
+El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
+
 ```js
 // 3. server v1
 const http = require("http");
@@ -102,6 +104,8 @@ const http = require("http");
 const server = http.createServer();
 server.listen(8888);
 ```
+
+- Abrir `http://localhost:8888/` en el browser
 
 ```bash
 // 4
@@ -155,6 +159,8 @@ http.createServer(onRequest).listen(PORT, error => {
   }
 });
 ```
+
+- Ver más ejemplos en [_The HTTP Module_ - Eloquent JavaScript](https://eloquentjavascript.net/20_node.html#h_3O5dGIJE9F)
 
 ### NPM
 
