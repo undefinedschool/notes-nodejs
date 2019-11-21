@@ -81,8 +81,21 @@ Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abi
 
 - Crear un archivo `payload.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
 
-- [`fs.readFile()`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_readfile_path_options_callback)
+### Sync
+
 - [`fs.readFileSync()`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_readfilesync_path_options)
+
+```js
+const fs = require('fs');
+
+const txt = fs.readFileSync('payload.txt', 'utf-8');
+
+console.log(txt);
+```
+
+### Async
+
+- [`fs.readFile()`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_readfile_path_options_callback)
 
 ```js
 const fs = require('fs');
