@@ -79,7 +79,7 @@ Podemos usar Node para leer y escribir archivos, a través del módulo `fs`
 
 Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
 
-- Crear un archivo `payload.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
+- Crear un archivo `example.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
 
 ### Sync
 
@@ -88,7 +88,20 @@ Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abi
 ```js
 const fs = require('fs');
 
-const txt = fs.readFileSync('payload.txt', 'utf-8');
+const txt = fs.readFileSync('example.txt', 'utf-8');
+
+console.log(txt);
+```
+
+#### Escribir un archivo
+
+- [`fs.writeFileSync`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_writefilesync_file_data_options)
+
+```js
+const fs = require('fs');
+
+const readMe = fs.readFileSync('example.txt', 'utf-8');
+fs.writeFileSync('writeMe.txt', readMe);
 
 console.log(txt);
 ```
@@ -102,7 +115,7 @@ const fs = require('fs');
 
 const { readFile } = fs;
 
-readFile('payload.txt', 'utf8', (err, data) => {
+readFile('example.txt', 'utf8', (err, data) => {
   if (err) {
     throw err
   };
