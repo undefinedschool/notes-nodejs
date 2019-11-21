@@ -178,6 +178,11 @@ http.createServer((request, response) => {
 node server.js
 ```
 
+#### Requests
+
+Ver [Making HTTP requests with Node
+](https://flaviocopes.com/node-make-http-requests/)
+
 ### Módulos 
 
 - ⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
