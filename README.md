@@ -181,6 +181,16 @@ const { rmdir } = fs;
 rmdir('node-fs');
 ```
 
+```js
+const fs = require('fs');
+
+const { rmdir, unlink: delete } = fs;
+
+delete('writeMe.txt', () => {
+  rmdir('node-fs');
+})
+```
+
 #### Ejercicio
 
 Usar [`fs.appendFile`](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback) para agregar el texto 
