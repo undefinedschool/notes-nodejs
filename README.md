@@ -160,6 +160,28 @@ http.createServer(onRequest).listen(PORT, error => {
 });
 ```
 
+#### Importar y exportar 
+
+```js
+// In `greetings.js`, create three functions
+const sayHello = name => `Hello, ${name}`;
+const flatter = () => `Look how gorgeous you are today!`;
+const sayGoodbye = name => `Goodbye, ${name}`;
+
+// Export two of them
+module.exports = {
+  sayHello,
+  flatter
+};
+
+// Load the module "greetings.js"
+const greetings = require("./greetings.js");
+
+// Use exported functions
+console.log(greetings.sayHello("Baptiste")); // "Hello, Baptiste"
+console.log(greetings.flatter()); // "Look how gorgeous you are today!"
+```
+
 - Ver más ejemplos en [_The HTTP Module_ - Eloquent JavaScript](https://eloquentjavascript.net/20_node.html#h_3O5dGIJE9F)
 
 ### NPM
