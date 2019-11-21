@@ -79,7 +79,7 @@ Podemos usar Node para leer y escribir archivos, a través del módulo `fs`
 
 Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
 
-- Crear un archivo `example.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
+- Crear un archivo `readMe.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
 
 ### Sync
 
@@ -88,7 +88,7 @@ Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abi
 ```js
 const fs = require('fs');
 
-const txt = fs.readFileSync('example.txt', 'utf-8');
+const txt = fs.readFileSync('readMe.txt', 'utf-8');
 
 console.log(txt);
 ```
@@ -100,7 +100,7 @@ console.log(txt);
 ```js
 const fs = require('fs');
 
-const readMe = fs.readFileSync('example.txt', 'utf-8');
+const readMe = fs.readFileSync('readMe.txt', 'utf-8');
 fs.writeFileSync('writeMe.txt', readMe);
 
 console.log(txt);
@@ -115,7 +115,7 @@ const fs = require('fs');
 
 const { readFile } = fs;
 
-readFile('example.txt', 'utf8', (err, data) => {
+readFile('readMe.txt', 'utf8', (err, data) => {
   if (err) {
     throw err
   };
@@ -126,6 +126,59 @@ readFile('example.txt', 'utf8', (err, data) => {
 
 // const readFile = util.promisify(fs.readFile)
 // readFile("path/to/myfile").then(file => console.log(file))
+```
+
+- [`fs.writeFile`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_writefile_file_data_options_callback)
+
+```js
+
+read('readMe.txt', 'utf-8', (err, data) => {
+  write('writeMe.txt', data)
+})
+
+console.log('HELLO!')
+```
+
+#### Borrar archivos
+
+- [`fs.unlink`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_unlink_path_callback)
+
+```js
+const fs = require('fs');
+
+const { unlink: delete } = fs;
+
+delete('writeMe.txt');
+```
+
+#### Crear directorios
+
+- [`fs.mkdir`](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)
+- [`fs.rmdir`](https://nodejs.org/api/fs.html#fs_fs_rmdir_path_options_callback)
+
+```js
+const fs = require('fs');
+
+const { mkdir, rmdir, readFile: read, writeFile: write } = fs;
+
+mkdir('node-fs', () => {
+  read('readMe.txt', 'utf-8', (err, data) => {
+    write('./node-fs/writeMe.txt', data)
+  })
+})
+```
+
+#### Borrar directorios
+
+Si intentamos borrar un directorio que no está vacío, se va a generar un error. Ver [Remove a directory that is not empty in NodeJS
+](https://geedew.com/remove-a-directory-that-is-not-empty-in-nodejs/)
+
+```js
+const fs = require('fs');
+
+const { rmdir } = fs;
+
+rmdir('node-fs');
 ```
 
 #### Ejercicio
