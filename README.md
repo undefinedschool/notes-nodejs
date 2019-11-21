@@ -115,6 +115,17 @@ readFile('payload.txt', 'utf8', (err, data) => {
 // readFile("path/to/myfile").then(file => console.log(file))
 ```
 
+#### Ejercicio
+
+Usar [`fs.appendFile`](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback) para agregar el texto 
+
+```js
+`Con 15 peso', con 15 peso' me hago 
+`
+```
+
+al principio del texto del archivo y mostrar el resultado en la consola
+
 ## Server
 
 El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
