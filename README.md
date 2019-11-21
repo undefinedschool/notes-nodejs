@@ -69,7 +69,13 @@ database.query("SELECT * FROM hugetable", function(rows) {
 console.log("Hello World");
 ```
 
+## Leyendo argumentos
+
+Ver [The Node Command](https://eloquentjavascript.net/20_node.html#h_TUzbi7lU/0)
+
 ## File System
+
+Podemos usar Node para leer y escribir archivos, a través del módulo `fs`
 
 Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
 
@@ -137,6 +143,8 @@ node server.js
 - ⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
 - Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon) para correr nuestro server
 - Instalar y probar el módulo [`chalk`](https://www.npmjs.com/package/chalk)
+- Ver [Node JS Tutorial for Beginners #7 - Module Patterns](https://www.youtube.com/watch?v=9UaZtgB5tQI)
+- Los módulos en Node se importan utilizando la función `require()`. **Para ser cargado como módulo, un paquete debe contener un archivo `index.js` ó el campo `main` definido en el `package.json`, para indicar un _entry point_ específico**.
 
 ```js
 // 7. server v3
@@ -160,6 +168,17 @@ http.createServer(onRequest).listen(PORT, error => {
   }
 });
 ```
+
+#### Módulos vs. paquetes
+
+Un archivo js importado con `require()` es un _módulo_ pero no un _paquete_, porque no tiene un archivo `package.json`.
+
+Un _paquete_ es una carpeta/directorio que contiene lo siguiente:
+
+- Un archivo [`package.json`](https://github.com/bpesquet/thejsway/blob/master/manuscript/chapter24.md#the-packagejson-file), que describe la aplicación y sus dependencias
+- Un _entry point_ definido, que por default es el archivo `index.js`
+- Un subdirectorio `node_modules`, que es la ubicación default donde Node va a buscar las dependencias del proyecto
+- El resto de los archivos que forman parte del código fuente de la aplicación
 
 #### Importar y exportar 
 
