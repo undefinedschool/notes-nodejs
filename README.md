@@ -186,7 +186,7 @@ const fs = require('fs');
 
 const { rmdir, unlink: delete } = fs;
 
-delete('writeMe.txt', () => {
+delete('./node-fs/writeMe.txt', () => {
   rmdir('node-fs');
 })
 ```
