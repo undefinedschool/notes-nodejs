@@ -88,7 +88,8 @@ Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abi
 ```js
 const fs = require('fs');
 
-const txt = fs.readFileSync('readMe.txt', 'utf-8');
+const { readFileSync } = fs;
+const txt = readFileSync('readMe.txt', 'utf-8');
 
 console.log(txt);
 ```
@@ -100,8 +101,9 @@ console.log(txt);
 ```js
 const fs = require('fs');
 
-const readMe = fs.readFileSync('readMe.txt', 'utf-8');
-fs.writeFileSync('writeMe.txt', readMe);
+const { readFileSync } = fs;
+const readMe = readFileSync('readMe.txt', 'utf-8');
+writeFileSync('writeMe.txt', readMe);
 
 console.log(txt);
 ```
