@@ -213,6 +213,12 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 2. Escribir en el archivo `ticket.txt` el texto `Gastaste ${importe} en ${producto}!`, donde `importe` y `producto` son parámetros que se reciben por consola
 
+3. Escribir la función `ls` que tome como parámetro un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio.
+
+```node ls(PATH)``` 
+
+Investigar [´fs.readdir´](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
+
 ## Server
 
 El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
