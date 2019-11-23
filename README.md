@@ -193,6 +193,30 @@ mkdir('node-fs', () => {
 })
 ```
 
+#### Crear directorio y mover un archivo
+
+```js
+const fs = require('fs');
+
+const { mkdir, rename } = fs;
+
+function move(src, dst) {
+  rename(src, dst, err => {
+    if (err) {
+      throw err;
+    }
+  });
+}
+
+mkdir('node-fs', err => {
+  if (err) {
+    throw err;
+  }
+
+  move('readMe_copy.txt', 'node-fs/readMe_copy.txt');
+});
+```
+
 #### Borrar directorios
 
 :warning: Si intentamos borrar un directorio que no está vacío, se va a generar un error. Ver [Remove a directory that is not empty in NodeJS
