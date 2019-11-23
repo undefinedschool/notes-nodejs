@@ -151,6 +151,14 @@ const { unlink: delete } = fs;
 delete('writeMe.txt');
 ```
 
+#### Copiar archivos
+
+Ver [`fs.copyFile`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_copyfile_src_dest_flags_callback)
+
+#### Renombrar/mover archivos
+
+Ver [`fs.rename`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_rename_oldpath_newpath_callback)
+
 #### Crear directorios
 
 - [`fs.mkdir`](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)
