@@ -236,7 +236,11 @@ const fs = require('fs');
 
 const { rmdir, unlink: del } = fs;
 
-del('./node-fs/writeMe.txt', () => {
+del('./node-fs/writeMe.txt', err => {
+  if (err) {
+    throw err;
+  }
+ 
   rmdir('node-fs');
 })
 ```
