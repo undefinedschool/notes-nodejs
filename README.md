@@ -122,7 +122,6 @@ readFile('readMe.txt', 'utf8', (err, data) => {
     throw err
   };
   
-  console.log(`OK: ${filename}`);
   console.log(data)
 });
 
@@ -133,12 +132,19 @@ readFile('readMe.txt', 'utf8', (err, data) => {
 - [`fs.writeFile`](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_writefile_file_data_options_callback)
 
 ```js
+const fs = require('fs');
+
+const { readFile: read, writeFile: write } = fs;
 
 read('readMe.txt', 'utf-8', (err, data) => {
-  write('writeMe.txt', data)
+  if (err) {
+    console.error(err);
+  }
+
+  write('writeMe.txt', data, err => console.error(err));
 })
 
-console.log('HELLO!')
+console.log('HELLO!');
 ```
 
 #### Borrar archivos
