@@ -71,7 +71,7 @@ console.log("Hello World");
 
 ## Leyendo argumentos
 
-Ver [The Node Command](https://eloquentjavascript.net/20_node.html#h_TUzbi7lU/0)
+Para leer argumentos a través de la terminal/CLI, podemos utilizar [`process.argv`](https://nodejs.org/docs/latest-v12.x/api/process.html#process_process_argv), que nos da acceso a una _especie de Array_ de strings. Notar que este pseudo-array también incluye como argumentos el comando que usamos para correr nuestro script y el nombre del archivo, por lo que los argumentos que nos interesan comienzan recién a partir de la posición/índice 2.
 
 ## File System
 
