@@ -259,7 +259,7 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 2. Escribir en el archivo `ticket.txt` el texto `Gastaste ${importe} en ${producto}!`, donde `importe` y `producto` son [parámetros que se reciben por consola](https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#leyendo-argumentos)
 
-3. Escribir la función `ls` que tome como parámetro un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio. Investigar para esto el método [`fs.readdir`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
+3. Escribir la función `ls` que tome como parámetro por consola un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio. Investigar para esto el método [`fs.readdir`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
 
 ## Server
 
