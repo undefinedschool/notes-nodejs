@@ -234,9 +234,9 @@ rmdir('node-fs');
 ```js
 const fs = require('fs');
 
-const { rmdir, unlink: delete } = fs;
+const { rmdir, unlink: del } = fs;
 
-delete('./node-fs/writeMe.txt', () => {
+del('./node-fs/writeMe.txt', () => {
   rmdir('node-fs');
 })
 ```
