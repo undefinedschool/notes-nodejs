@@ -154,10 +154,10 @@ console.log('HELLO!');
 ```js
 const fs = require('fs');
 
-const { unlink: delete } = fs;
+const { unlink: del } = fs;
 const filePath = 'writeMe.txt';
 
-delete(filePath, err => {
+del(filePath, err => {
   if (err) {
     throw err;
   }
