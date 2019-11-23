@@ -191,9 +191,9 @@ delete('./node-fs/writeMe.txt', () => {
 })
 ```
 
-#### Ejercicio
+#### Ejercicios
 
-Usar [`fs.appendFile`](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback) para agregar el texto 
+1. Usar [`prepend-file`](https://www.npmjs.com/package/prepend-file) para agregar el texto 
 
 ```js
 `Con 15 peso', con 15 peso' me hago 
@@ -202,6 +202,8 @@ Usar [`fs.appendFile`](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data
 ```
 
 al principio del texto del archivo y mostrar el resultado en la consola
+
+2. Escribir en el archivo `ticket.txt` el texto `Gastaste ${importe} en ${producto}!`, donde `importe` y `producto` son parámetros que se reciben por consola
 
 ## Server
 
