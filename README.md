@@ -149,6 +149,8 @@ console.log('HELLO!');
 
 #### Borrar archivos
 
+:warning: **Sólo podemos eliminar archivos que existan, caso contrario `unlink` va a retornar un error**
+
 - [`fs.unlink`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_unlink_path_callback)
 
 ```js
@@ -193,7 +195,7 @@ mkdir('node-fs', () => {
 
 #### Borrar directorios
 
-Si intentamos borrar un directorio que no está vacío, se va a generar un error. Ver [Remove a directory that is not empty in NodeJS
+:warning: Si intentamos borrar un directorio que no está vacío, se va a generar un error. Ver [Remove a directory that is not empty in NodeJS
 ](https://geedew.com/remove-a-directory-that-is-not-empty-in-nodejs/)
 
 ```js
