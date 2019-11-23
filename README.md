@@ -251,11 +251,13 @@ Ver [Making HTTP requests with Node
 
 ### Módulos 
 
-- ⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
-- Instalar y usar el módulo [`nodemon`](https://www.npmjs.com/package/nodemon) para correr nuestro server
-- Instalar y probar el módulo [`chalk`](https://www.npmjs.com/package/chalk)
+Los [_módulos_](http://thenodeway.io/introduction/#build-small-single-purpose-modules) forman parte de los bloques fundamentales que utilizamos en Node para construir aplicaciones. Como buena práctica, vamos a tratar siempre en lo posible de construir **módulos pequeños, con un propósito único y claro**.
+
+Los módulos en Node se importan utilizando la función `require()`. **Para ser cargado como módulo, un paquete debe contener un archivo `index.js` ó el campo `main` definido en el `package.json`, para indicar un _entry point_ específico**.
+
+⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
+
 - Ver [Node JS Tutorial for Beginners #7 - Module Patterns](https://www.youtube.com/watch?v=9UaZtgB5tQI)
-- Los módulos en Node se importan utilizando la función `require()`. **Para ser cargado como módulo, un paquete debe contener un archivo `index.js` ó el campo `main` definido en el `package.json`, para indicar un _entry point_ específico**.
 
 ```js
 // 7. server v3
@@ -367,7 +369,7 @@ npm uninstall -g <MODULE_NAME>
 
 ### NPX
 
-_NPX_ sirve para ejecutar ciertos comandos (fundamentalmente relacionados a CLIs) sin tener la necesidad de descargar e instalar un módulo en nuestro proyecto
+[_NPX_](https://nodejs.dev/the-npx-nodejs-package-runner) sirve para ejecutar ciertos comandos (fundamentalmente relacionados a CLIs) sin tener la necesidad de descargar e instalar un módulo en nuestro proyecto
 
 - [Using npx and npm scripts to Reduce the Burden of Developer Tools](https://dev.to/azure/using-npx-and-npm-scripts-to-reduce-the-burden-of-developer-tools-57f9)
 - [npx vs npm - THE npx ADVANTAGE](https://dev.to/sarscode/npx-vs-npm-the-npx-advantage-1h0o)
