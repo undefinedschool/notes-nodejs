@@ -155,8 +155,15 @@ console.log('HELLO!');
 const fs = require('fs');
 
 const { unlink: delete } = fs;
+const filePath = 'writeMe.txt';
 
-delete('writeMe.txt');
+delete(filePath, err => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(`${filePath} was deleted succesfully.`)
+});
 ```
 
 #### Copiar archivos
