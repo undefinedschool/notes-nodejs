@@ -170,11 +170,11 @@ del(filePath, err => {
 
 #### Copiar archivos
 
-Ver [`fs.copyFile`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_copyfile_src_dest_flags_callback)
+Usar [`fs.copyFile`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_copyfile_src_dest_flags_callback) para copiar `'readMe.txt'` a `'readMeCopy.txt'`
 
 #### Renombrar/mover archivos
 
-Ver [`fs.rename`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_rename_oldpath_newpath_callback)
+Usar [`fs.rename`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_rename_oldpath_newpath_callback) para renombrar `'readMeCopy.txt'` a `'readMe_copy.txt'`
 
 #### Crear directorios
 
