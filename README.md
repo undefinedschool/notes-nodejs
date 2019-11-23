@@ -186,7 +186,8 @@ const fs = require('fs');
 
 const { mkdir, rmdir, readFile: read, writeFile: write } = fs;
 
-mkdir('node-fs', () => {
+mkdir('node-fs', err => {
+  if (err)
   read('readMe.txt', 'utf-8', (err, data) => {
     write('./node-fs/writeMe.txt', data)
   })
