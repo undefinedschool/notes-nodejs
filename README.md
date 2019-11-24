@@ -17,6 +17,8 @@ Para chequear que se haya instalado correctamente, correr el comando `node -v` e
 
 _NodeJS_ ó _Node_ a secas, es principalmente un _entorno de ejecución_, es decir, nos brinda el _contexto_ necesario para poder ejecutar código JavaScript por fuera de un browser. 
 
+Es _Open-Source_ y tiene soporte _multi-plataforma_.
+
 **Recordemos que JavaScript sólo funciona en el browser de forma _nativa_ y que se trata de un lenguaje de _alto nivel_**. Esto significa que realizar tareas como **_networking_**, acceder a hardware de red (ej: acceder a la tarjeta de red) para poder _escuchar requests_ y responder, **_acceder al file system_** del sistema operativo que estemos usando, para leer archivos (ej: un documento HTML) y enviarlos, poder levantar y correr un _server_, comunicarnos con una _base de datos_, desarrollar una _API_, etc, **no son capacidades propias de un lenguaje como JavaScript**.
 
 Es por esto que necesitamos un **intermediario**, algo así como una _API_ que nos permita, escribiendo el código JavaScript que ya conocemos, acceder a este tipo de funcionalidades, necesarias para el _backend_ de nuestra aplicación.
@@ -30,6 +32,24 @@ Uno de los componentes de **Node** es **[V8](https://v8project.blogspot.com.ar)*
 ![](https://i.imgur.com/a0o7qLc.png)
 
 Aparte de **V8**, tenemos el lenguaje **C++**, el cual, a traves de ciertas librerias que vienen con **Node** (como [libuv](https://github.com/libuv/libuv)), nos permiten acceder a _funcionalidad de más bajo nivel_ como las mencionadas antes e interactucar directamente con el sistema operativo. Para acceder a esa funcionalidad, vamos a utilizar la [**_API_**](https://nodejs.org/dist/latest-v12.x/docs/api/) que nos provee Node.
+
+### Operaciones I/O
+
+Las operaciones de I/O son aquellas que se producen cuando hay una comunicación entre una computadora y ciertos _periféricos_, como pueden ser una tarjeta de red ó un disco.
+
+Estas operaciones pueden consistir en, por ejemplo, intercambiar información a través de una red (networking) realizando requests, escuchar requests en cierto puerto y generar una respuesta, acceder a una base de datos ó realizar diversas acciones con el _filesystem_, como crear, leer y escribir archivos, copiar y pegar archivos, creary eliminar directorios, etc.
+
+### _Single-thread_
+
+**Las aplicaciones desarrolladas en Node corren en un único proceso (aka _thread_)**. Es decir, no crean un proceso nuevo por cada _request_. Node nos provee de muchos métodos de I/O asincrónicos a través de su _API_ que previenen que el código se _bloquee_. La mayoría de las librerías, módulos y frameworks de Node estan escritas utilizando el paradigma asincrónico, por lo que encontrar _código bloqueante o sincrónico_ es más bien la excepción y no la norma.
+
+### _Non-blocking I/O_
+
+Cuando Node realiza alguna [operación de I/O](), en lugar de bloquear el único thread del que disponemos y desperdiciar _ciclos de CPU_ esperando, Node retomará las operaciones pendientes cuando la respuesta se encuentre disponible.
+
+![](https://i.imgflip.com/3hdgov.jpg)
+
+Esto le permite a Node por ejemplo,poder manejar tranquilamente miles de conexiones concurrentes con un único servidor levantado (recordemos que operamos con un único proceso), lo cual nos proporciona un gran ahorro de recursos, hardware, etc y evitamos tener que lidiar con el manejo de _threads_ para la concurrencia, simplificando en gran medida y agilizando el desarrollo.
 
 ### Entorno + API
 
