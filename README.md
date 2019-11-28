@@ -390,7 +390,7 @@ PORT=8888 node app.js
 
 ```html
 <h1>Hey!</h1>
-<p>Estás haciendo un <code>{{METHOD}}</code> a la <em>url</em> <code>{{URL}}</code> 🎉</p>
+<p>Soy un servidor <code>Node</code> y vos estás haciendo un <code>{{METHOD}}</code> a la <em>url</em> <code>{{URL}}</code> 🎉</p>
 ```
 
 donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost:8001/node` y `{{METHOD}}` es el _verbo HTTP_ utilizado, ej: `GET`. Para visualizar correctamente el HTML, tendremos que agregar el `charset` al `Content-Type` en los _headers_:
