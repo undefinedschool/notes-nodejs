@@ -281,7 +281,7 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 3. Escribir la función `ls` que tome como parámetro por consola un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio. Investigar para esto el método [`fs.readdir`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
 
-## Server
+## HTTP (Server y requests)
 
 El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
 
