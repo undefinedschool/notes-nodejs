@@ -98,7 +98,22 @@ console.log("Hello World");
 
 ## Leyendo argumentos
 
-Para leer argumentos a través de la terminal/CLI, podemos utilizar [`process.argv`](https://nodejs.org/docs/latest-v12.x/api/process.html#process_process_argv), que nos da acceso a una _especie de Array_ de strings. Notar que este pseudo-array también incluye como argumentos el comando que usamos para correr nuestro script y el nombre del archivo, por lo que los argumentos que nos interesan comienzan recién a partir de la posición/índice 2.
+Para leer argumentos a través de la terminal/CLI, podemos utilizar [`process.argv`](https://nodejs.org/docs/latest-v12.x/api/process.html#process_process_argv), que nos da acceso a un _Array_. Notar que este array también incluye como argumentos el comando que usamos para correr nuestro script y la ruta del archivo, por lo que los argumentos que nos interesan comienzan recién a partir del índice 2 del mismo, los cuales podemos obtener haciendo
+
+```js
+const args = process.argv.slice(2);
+```
+
+Para más info, ver [Node.js, accept arguments from the command line
+](https://nodejs.dev/nodejs-accept-arguments-from-the-command-line)
+
+### Iterar argumentos
+
+```js
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+})
+```
 
 ## File System
 
@@ -293,10 +308,10 @@ al principio del texto del archivo y mostrar el resultado en la consola
 El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
 
 ```js
-// 3. server v1
+// server v1
 const http = require("http");
 
-// `createServer()` retorna un objeto, que tiene el método `listen`
+// `createServer()` crea un nuevo servidor HTTP y retorna un objeto, que tiene el método `listen`
 const server = http.createServer();
 server.listen(8888);
 ```
@@ -304,33 +319,57 @@ server.listen(8888);
 - Abrir `http://localhost:8888/` en el browser
 
 ```bash
-// 4
 node server.js
 ```
 
 - Cuando el servidor recibe un _request_, se dispara el evento [`request`](https://nodejs.org/api/http.html#http_event_request) y se ejecuta el _callback_ que recibe `createServer`. Este callback tiene 2 parámetros, los objetos `request` y `response`
 
 ```js
-// 5. server v2
+// server v2
 // en un archivo server.js
 const http = require("http");
 
 http.createServer((request, response) => {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.write('Hello World');
   response.end();
 }).listen(8888);
 ```
 
 ```bash
-// 6
 node server.js
 ```
 
-#### Requests
+```js
+// server v3
+const http = require('http');
+
+const HOSTNAME = '127.0.0.1';
+const PORT = process.env.PORT;
+
+const server = http.createServer((request, response) => {
+  response.statusCode = 200;
+  response.setHeader('Content-Type', 'text/plain');
+  response.end('Hello World!');
+})
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
+})
+```
+
+```bash
+PORT=8888 node app.js
+```
+
+#### Haciendo requests con Node
 
 Ver [Making HTTP requests with Node
 ](https://flaviocopes.com/node-make-http-requests/)
+
+#### Haciendo requests con `node-fetch`
+
+Ver [`node-fetch`](https://www.npmjs.com/package/node-fetch)
 
 ### Módulos 
 
