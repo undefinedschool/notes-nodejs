@@ -403,7 +403,39 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
 
 3. Crear un archivo `index.html` con el siguiente contenido
 
-<script src="https://gist.github.com/nhsz/06e96fbe64dd6e6e5a6cf5bd54e4b274.js"></script>
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Server</title>
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Molle', cursive;
+        color: #026e00;
+        padding: 24px;
+      }
+      h1 {
+        font-size: 5em;
+      }
+      p {
+        font-size: 2em;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hey!</h1>
+    <p>Soy un servidor <code>Node</code> y estás viendo el <code>index.html</code> que leí y te estoy mandando 🎉</p>
+  </body>
+</html>
+
 
 Modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
 
