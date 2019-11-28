@@ -401,12 +401,9 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
 
 2. Modificar el código del ítem anterior para tener el servidor en un archivo `server.js`, que exporte la función `up`, la cual sirve para iniciar el servidor en el puerto `8888`. Esta función debe loguear mensajes por consola indicando cuando el servidor está levantado y cuando recibe un nuevo request. El _callback_ que recibe `createServer` debe modularizarse y moverse a la función `onRequest`. Por último, Crear el archivo `index.js`, en el cual vamos a importar el server y utilizar la función `up` para correrlo.
 
-3. Crear un archivo `index.html` con el siguiente contenido:
+3. Crear un archivo `index.html` con el siguiente contenido
 
-```html
-<h1>Hey!</h1>
-<p>Soy un servidor <code>Node</code> y estás viendo el <code>index.html</code> que leí y te estoy mandando 🎉</p>
-```
+<script src="https://gist.github.com/nhsz/06e96fbe64dd6e6e5a6cf5bd54e4b274.js"></script>
 
 Modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
 
