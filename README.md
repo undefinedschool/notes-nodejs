@@ -4,6 +4,13 @@
 
 # [WIP] Notas sobre NodeJS (Server-Side JavaScript)
 
+## Contenido
+
+- [File System](https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#file-system)
+- [HTTP (Server y requests)](https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#file-system)
+
+---
+
 ## Instalación
 
 - **Windows:** ir a la [página oficial](https://nodejs.org/en/), descargar e instalar el binario de la versión **LTS**
@@ -281,7 +288,7 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 3. Escribir la función `ls` que tome como parámetro por consola un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio. Investigar para esto el método [`fs.readdir`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
 
-## HTTP (Server y requests)
+## Server
 
 El módulo [`http`](https://nodejs.org/api/http.html) nos provee de la funcionalidad necesaria para crear servidores HTTP y realizar requests.
 
