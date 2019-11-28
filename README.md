@@ -341,7 +341,29 @@ node server.js
 ```
 
 ```js
-// server v3
+// 7. server v3 (refactoring)
+const http = require("http");
+const HOSTNAME = '127.0.0.1'
+const PORT = 8888;
+
+function onRequest(request, response) {
+  console.log("Request received.");
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World");
+  response.end();
+}
+
+http.createServer(onRequest).listen(PORT, error => {
+  if (error) {
+    console.error('THIS IS FINE. 🔥🔥🔥🚒');
+  } else {
+    console.log(`Server listening on http://${HOSTNAME}:${PORT}`);
+  }
+});
+```
+
+```js
+// server v4 (ejemplo de la documentación de Node)
 const http = require('http');
 
 const HOSTNAME = '127.0.0.1';
@@ -362,6 +384,23 @@ server.listen(port, hostname, () => {
 PORT=8888 node app.js
 ```
 
+#### Ejercicios
+
+1. Crear un servidor en Node, que escuche en el puerto `8001` (el puerto debe pasarse como parámetro a través de lasvariables de entorno) y responda con el siguiente HTML:
+
+```html
+<h1>Hey!</h1>
+<p>Estás haciendo un <code>{{METHOD}}</code> a la <em>url</em> <code>{{URL}}</code> 🎉</p>
+```
+
+donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost:8001/node` y `{{METHOD}}` es el _verbo HTTP_ utilizado, ej: `GET`. Para visualizar correctamente el HTML, tendremos que agregar el `charset` al `Content-Type` en los _headers_:
+
+```js
+'Content-Type': 'text/html; charset=utf-8'
+```
+
+2. Modificar el código del ítem anterior para tener el servidor en un archivo `server.js`, que exporte la función `up`, la cual sirve para iniciar el servidor en el puerto `8888`. Esta función debe loguear mensajes por consola indicando cuando el servidor está levantado y cuando recibe un nuevo request. El _callback_ que recibe `createServer` debe modularizarse y moverse a la función `onRequest`. Por último, Crear el archivo `index.js`, en el cual vamos a importar el server y utilizar la función `up` para correrlo.
+
 #### Haciendo requests con Node
 
 Ver [Making HTTP requests with Node
@@ -380,29 +419,6 @@ Los módulos en Node se importan utilizando la función `require()`. **Para ser 
 ⚠️ La carga de los módulos se realiza de forma _sincrónica_ usando `require`, por lo que **siempre debemos cargarlos al inicio del archivo** si no queremos bloquear la aplicación
 
 - Ver [Node JS Tutorial for Beginners #7 - Module Patterns](https://www.youtube.com/watch?v=9UaZtgB5tQI)
-
-```js
-// 7. server v3
-// refactoring
-const http = require("http");
-const HOSTNAME = '127.0.0.1'
-const PORT = 8888;
-
-function onRequest(request, response) {
-  console.log("Request received.");
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
-  response.end();
-}
-
-http.createServer(onRequest).listen(PORT, error => {
-  if (error) {
-    console.error('THIS IS FINE. 🔥🔥🔥🚒');
-  } else {
-    console.log(`Server listening on http://${HOSTNAME}:${PORT}`);
-  }
-});
-```
 
 #### Módulos vs. paquetes
 
