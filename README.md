@@ -6,8 +6,8 @@
 
 ## Contenido
 
-- [File System](https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#file-system)
-- [HTTP (Server y requests)](https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#file-system)
+- [File System](#file-system)
+- [HTTP (Server y requests)](#http-server-y-requests)
 
 ---
 
