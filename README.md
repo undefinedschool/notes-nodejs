@@ -34,7 +34,9 @@ Vamos a llamar **_entorno de ejecución_** a todo lo que necesitamos para poder 
 
 ### V8
 
-Uno de los componentes de **Node** es **[V8](https://v8project.blogspot.com.ar)**, un _engine_ de JavaScript que se encarga de _parsear_, _compilar_, _optimizar_, _interpretar_ y ejecutar nuestro código
+Uno de los componentes de **Node** es **[V8](https://v8project.blogspot.com.ar)**, un _engine_ de JavaScript que se encarga de _parsear_, _compilar_, _optimizar_, _interpretar_ y ejecutar nuestro código.
+
+La computadora no entiende (y por lo tanto no puede ejecutar) JavaScript directamente. Un _engine_, como lo es V8, toma nuestro código JavaScript y lo convierte a algo que si entiende, lo que se conoce como _código máquina_ o _binario_.
 
 ![](https://i.imgur.com/a0o7qLc.png)
 
