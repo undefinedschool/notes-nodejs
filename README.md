@@ -437,9 +437,9 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
     <p>Soy un servidor <code>Node</code> y estás viendo el <code>index.html</code> que leí y te estoy mandando 🎉</p>
   </body>
 </html>
+```
 
-
-Modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
+4. Modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
 
 ```js
 response.writeHead(404);
