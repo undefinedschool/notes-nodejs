@@ -10,6 +10,7 @@
   - [Ejercicios](#ejercicios)
 - [HTTP (Server y requests)](#http-server-y-requests)
   - [Ejercicios](#ejercicios-1)
+- [Mini-proyecto](#mini-proyecto)
 
 ---
 
