@@ -10,7 +10,6 @@
   - [Ejercicios](#ejercicios)
 - [HTTP (Server y requests)](#http-server-y-requests)
   - [Ejercicios](#ejercicios-1)
-- [Mini-proyecto](#mini-proyecto)
 
 ---
 
@@ -473,10 +472,6 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
 response.writeHead(404);
 response.write('File not found.');
 ```
-
-#### Mini-proyecto: Node Jokes
-
-Ver [Mini-proyecto: Node Jokes](https://github.com/undefinedschool/mini-project-node-jokes)
 
 #### Haciendo requests con `node-fetch`
 
