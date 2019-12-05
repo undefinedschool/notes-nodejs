@@ -474,34 +474,9 @@ response.writeHead(404);
 response.write('File not found.');
 ```
 
-#### Mini-proyecto
+#### Mini-proyecto: Node Jokes
 
-##### Parte 1
-
-En este ejercicio vamos a construir una pequeña aplicación de línea de comandos (CLI), utilizando los módulos `fs` y `request` de la _API de Node_, que nos permita [realizar _requests_ a una _API_](#haciendo-requests-con-node)y almacenar el resultado en un archivo de texto. Además, vamos a utilizar los paquetes [`chalk`](https://www.npmjs.com/package/chalk) para loguear algunos mensajes por consola en diferentes colores y [`prompt`](https://www.npmjs.com/package/prompt) para solicitar input del usuario.
-
-Esta aplicación debe solicitar inout al usuario utilizando [`prompt`](https://www.npmjs.com/package/prompt). Este argumento será una _keyword_ que vamos a utilizar como término de búsqueda. La aplicación hará un _request_ a la [_dad joke API_](https://icanhazdadjoke.com/api) (en formato JSON) para buscar algún chiste basado en esta keyword: si encuentra alguno, debe loguearlo por consola (en color verde, entre comillas) y guardarlo en el archivo `jokes.txt`. Si no encuentra ningún chiste, debe loguear por consola (en color rojo, entre comillas) el mensaje `"Acá no hacemos chistes con esas cosas."` 
-
-El código debe estar organizado en los siguientes módulos:
-
-- un archivo `input.js`, donde escribiremos el código necesario para obtener el input del usuario
-- un archivo `api.js`, donde escribiremos el código para hacer el request a la API y retornaremos el resultado en formato JSON
-- un archivo `output.js`, donde escribiremos el código necesario para loguear los mensajes en consola, con los colores correspondientes.
-- un archivo `index.js`, donde importaremos los módulos correspondientes y escribiremos el código necesario para correr la aplicación
-
-```
-|
-|- api.js
-|- index.js
-|- output.js
-|_ input.js
-```
-
-##### Parte 2 (un poco más difícil)
-
-Si el programa recibe el string `leaderboard` como segundo argumento, la aplicación debe loguear entre comillas y sin formato extra, el chiste más popular de los obtenidos, basado en cuántas veces aparece en el archivo `jokes.txt`, seguido del texto `"#ElMasPopular"`, en color azul claro. Ver ejemplo debajo
-
-![](https://i.imgur.com/7t0jOQn.png)
+Ver [Mini-proyecto: Node Jokes](https://github.com/undefinedschool/mini-project-node-jokes)
 
 #### Haciendo requests con `node-fetch`
 
