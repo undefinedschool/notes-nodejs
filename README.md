@@ -311,7 +311,7 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 El módulo `path`de Node es muy útil para trabajar con y manipular rutas (_paths_) de diferentes maneras.
 
-```
+```js
 const path = require("path");
 
 // Normalizar una ruta
