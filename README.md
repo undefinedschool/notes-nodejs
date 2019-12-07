@@ -446,7 +446,7 @@ y si el request se hace a `/bye`, la respuesta sea
 
 **Nota:** en ambos casos, lo único que cambia en la respuesta es el contenido del `h1` y si el request se hace a `/`, la respuesta debe ser la misma del primer ejercicio.
 
-3. Modificar el código del ejercicio anterior, para que, si se realizar un request a la url `/christmas`, el servidor devuelva, en formato `JSON`, la cantidad de minutos que faltan entre la fecha actual y el 25 de Diciembre, 0hs. Usar [date-fns](https://date-fns.org/v1.29.0/docs/differenceInMinutes) para realizar este cálculo.
+3. Modificar el código del ejercicio anterior, para que, si se realiza un request a la url `/christmas`, el servidor devuelva, en formato `JSON`, la cantidad de minutos que faltan entre la fecha actual y el 25 de Diciembre, 0hs. Usar [date-fns](https://date-fns.org/v1.29.0/docs/differenceInMinutes) para realizar este cálculo.
 
 4. Modificar el código del ejercicio 1, para tener el servidor en un archivo `server.js`, que exporte la función `up`, la cual sirve para iniciar el servidor en el puerto `8888`. Esta función debe loguear mensajes por consola indicando cuando el servidor está levantado y cuando recibe un nuevo request. El _callback_ que recibe `createServer` debe modularizarse y moverse a la función `onRequest`. Por último, Crear el archivo `index.js`, en el cual vamos a importar el server y utilizar la función `up` para correrlo.
 
