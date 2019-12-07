@@ -415,7 +415,7 @@ Ver [Making HTTP requests with Node
 
 #### Ejercicios
 
-1. Crear un servidor en Node, que escuche en el puerto `8001` (el puerto debe pasarse como parámetro a través de lasvariables de entorno) y responda con el siguiente HTML:
+1. Crear un servidor en Node, que escuche en el puerto `8001` (el puerto debe pasarse como parámetro a través de las variables de entorno) y responda con el siguiente HTML:
 
 ```html
 <h1>Hey!</h1>
@@ -428,9 +428,27 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
 'Content-Type': 'text/html; charset=utf-8'
 ```
 
-2. Modificar el código del ítem anterior para tener el servidor en un archivo `server.js`, que exporte la función `up`, la cual sirve para iniciar el servidor en el puerto `8888`. Esta función debe loguear mensajes por consola indicando cuando el servidor está levantado y cuando recibe un nuevo request. El _callback_ que recibe `createServer` debe modularizarse y moverse a la función `onRequest`. Por último, Crear el archivo `index.js`, en el cual vamos a importar el server y utilizar la función `up` para correrlo.
+2. Modificar el código del ejercicio anterior, para que si se hace un request a `/hello`, el servidor responda con el siguiente HTML:
 
-3. Crear un archivo `index.html` con el siguiente contenido
+```html
+<h1>Hola! 😃</h1>
+<p>Soy un servidor <code>Node</code> y vos estás haciendo un <code>{{METHOD}}</code> a la <em>url</em> <code>{{URL}}</code> 🎉</p>
+```
+
+y si el request se hace a `/bye`, la respuesta sea
+
+```html
+<h1>Bueno. 😢</h1>
+<p>Soy un servidor <code>Node</code> y vos estás haciendo un <code>{{METHOD}}</code> a la <em>url</em> <code>{{URL}}</code> 🎉</p>
+```
+
+**Nota:** en ambos casos, lo único que cambia en la respuesta es el contenido del `h1` y si el request se hace a `/`, la respuesta debe ser la misma del primer ejercicio.
+
+3. Modificar el código del ejercicio anterior, para que, si se realizar un request a la url `/christmas`, el servidor devuelva, en formato `JSON`, la cantidad de minutos que faltan entre la fecha actual y el 25 de Diciembre, 0hs. Usar [date-fns](https://date-fns.org/v1.29.0/docs/differenceInMinutes) para realizar este cálculo.
+
+4. Modificar el código del ejercicio 1, para tener el servidor en un archivo `server.js`, que exporte la función `up`, la cual sirve para iniciar el servidor en el puerto `8888`. Esta función debe loguear mensajes por consola indicando cuando el servidor está levantado y cuando recibe un nuevo request. El _callback_ que recibe `createServer` debe modularizarse y moverse a la función `onRequest`. Por último, Crear el archivo `index.js`, en el cual vamos a importar el server y utilizar la función `up` para correrlo.
+
+5. Crear un archivo `index.html` con el siguiente contenido
 
 ```html
 <!DOCTYPE html>
@@ -466,7 +484,7 @@ donde `{{URL}}` es la _url_ a la cual el cliente hizo el request, ej: `localhost
 </html>
 ```
 
-4. Modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
+Luego, modificar el código del ítem anterior, para que como respuesta envíe el resultado de leer el contenido del archivo HTML creado. En caso de error al leer el archivo, modificar los _headers_ de la respuesta de la siguiente forma
 
 ```js
 response.writeHead(404);
