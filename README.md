@@ -415,6 +415,8 @@ Ver [Making HTTP requests with Node
 
 #### Ejercicios
 
+**Tip:** Usar [`nodemon`](https://www.npmjs.com/package/nodemon) y crear el script `dev: nodemon index.js` en el `package.json` para correrlos
+
 1. Crear un servidor en Node, que escuche en el puerto `8001` (el puerto debe pasarse como parámetro a través de las variables de entorno) y responda con el siguiente HTML:
 
 ```html
