@@ -493,7 +493,7 @@ response.writeHead(404);
 response.write('File not found.');
 ```
 
-6. Modificar el `html` del ejercicio anterior para incluir [esta imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1180px-Node.js_logo.svg.png) con el nombre `node.png` en el mismo. La imagen debe estar en el proyecto, dentro de una carpeta `assets`.
+6. Modificar el `html` del ejercicio anterior para incluir [esta imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1180px-Node.js_logo.svg.png) con el nombre `node.png` en el mismo. La imagen debe estar en el proyecto, dentro de una carpeta `assets`. En el caso de que el servidor reciba un request a una ruta no definida, debe responder con un status `404` y el html `<h2>404 - Page not found :(</h2>`
 
 #### Haciendo requests con `node-fetch`
 
