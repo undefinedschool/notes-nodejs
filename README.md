@@ -1,15 +1,59 @@
 > El siguiente contenido fue elaborado por [@_nhsz](https://twitter.com/_nhsz) como guía para las clases de [undefined school](https://twitter.com/undefinedSchool)
+> Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc. 
 
-> Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc
+> 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
 
-# [WIP] Notas sobre NodeJS (Server-Side JavaScript)
+# ![Notas sobre NodeJS (Server-Side JavaScript)](https://i.imgur.com/c6g1d9A.png)
+
+## Notas relacionadas
+
+### `backend`
+
+- [**Express**](https://github.com/undefinedschool/notes-expressjs)
+- [**APIs**](https://github.com/undefinedschool/notes-apis)
+- [**Bases de Datos**](https://github.com/undefinedschool/notes-dbs)
+
+### `async`
+
+- [**Event Loop**](https://github.com/undefinedschool/notes-event-loop)
+- [**Callbacks**](https://github.com/undefinedschool/notes-callbacks)
 
 ## Contenido
 
-- [File System](#file-system)
-  - [Ejercicios](#ejercicios)
-- [HTTP (Server y requests)](#http-server-y-requests)
-  - [Ejercicios](#ejercicios-1)
+- [Instalación](https://github.com/undefinedschool/notes-nodejs#instalaci%C3%B3n)
+- [¿Qué es NodeJS?](https://github.com/undefinedschool/notes-nodejs#qu%C3%A9-es-nodejs)
+  - [V8](https://github.com/undefinedschool/notes-nodejs#v8)
+  - [Operaciones I/O](https://github.com/undefinedschool/notes-nodejs#operaciones-io)
+  - [_Single-thread_](https://github.com/undefinedschool/notes-nodejs#single-thread)
+  - [_Non-blocking I/O_](https://github.com/undefinedschool/notes-nodejs#non-blocking-io)
+  - [Entorno + API](https://github.com/undefinedschool/notes-nodejs#entorno--api)
+- [REPL](https://github.com/undefinedschool/notes-nodejs#repl)
+- [Node nos permite escribir código _asincrónico_](https://github.com/undefinedschool/notes-nodejs#node-nos-permite-escribir-c%C3%B3digo-asincr%C3%B3nico)
+- [Leyendo argumentos](https://github.com/undefinedschool/notes-nodejs#leyendo-argumentos)
+  - [Iterar argumentos](https://github.com/undefinedschool/notes-nodejs#iterar-argumentos)
+- [File System](https://github.com/undefinedschool/notes-nodejs#file-system)
+  - [Sync](https://github.com/undefinedschool/notes-nodejs#sync)
+    - [Escribir un archivo](https://github.com/undefinedschool/notes-nodejs#escribir-un-archivo)
+  - [Async](https://github.com/undefinedschool/notes-nodejs#async)
+    - [Borrar archivos](https://github.com/undefinedschool/notes-nodejs#borrar-archivos)
+    - [Copiar archivos](https://github.com/undefinedschool/notes-nodejs#copiar-archivos)
+    - [Renombrar/mover archivos](https://github.com/undefinedschool/notes-nodejs#renombrarmover-archivos)
+    - [Crear directorios](https://github.com/undefinedschool/notes-nodejs#crear-directorios)
+    - [Crear directorio y mover un archivo](https://github.com/undefinedschool/notes-nodejs#crear-directorio-y-mover-un-archivo)
+    - [Borrar directorios](https://github.com/undefinedschool/notes-nodejs#borrar-directorios)
+    - [Ejercicios](https://github.com/undefinedschool/notes-nodejs#ejercicios)
+- [Path](https://github.com/undefinedschool/notes-nodejs#path)
+- [HTTP (Server y requests)](https://github.com/undefinedschool/notes-nodejs#http-server-y-requests)
+  - [Haciendo requests con Node](https://github.com/undefinedschool/notes-nodejs#haciendo-requests-con-node)
+  - [Haciendo requests con `node-fetch`](https://github.com/undefinedschool/notes-nodejs#haciendo-requests-con-node-fetch)
+  - [Ejercicios](https://github.com/undefinedschool/notes-nodejs#ejercicios-1)
+- [Módulos](https://github.com/undefinedschool/notes-nodejs#m%C3%B3dulos)
+  - [Módulos vs. paquetes](https://github.com/undefinedschool/notes-nodejs#m%C3%B3dulos-vs-paquetes)
+  - [Importar y exportar](https://github.com/undefinedschool/notes-nodejs#importar-y-exportar)
+  - [NPM](https://github.com/undefinedschool/notes-nodejs#npm)
+    - [NPM Cheatsheet](https://github.com/undefinedschool/notes-nodejs#npm-cheatsheet)
+  - [NPX](https://github.com/undefinedschool/notes-nodejs#npx)
+
 
 ---
 
@@ -21,6 +65,8 @@
 Para chequear que se haya instalado correctamente, correr el comando `node -v` en la consola (debe retornar una versión >= 12)
 
 > **¿Qué es _LTS_?** Leer [LTS vs Current version](https://stackoverflow.com/questions/33661274/what-are-the-differences-between-long-term-support-lts-and-stable-versions-of)
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ## ¿Qué es NodeJS?
 
@@ -34,6 +80,8 @@ Es por esto que necesitamos un **intermediario**, algo así como una _API_ que n
 
 Vamos a llamar **_entorno de ejecución_** a todo lo que necesitamos para poder ejecutar nuestro código e interactuar con estas funcionalidades. **Node** es quien nos va a dar este _entorno_ y nos va a permitir ejecutar código JavaScript prácticamente en todos lados.
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### V8
 
 Uno de los componentes de **Node** es **[V8](https://v8project.blogspot.com.ar)**, un _engine_ de JavaScript que se encarga de _parsear_, _compilar_, _optimizar_, _interpretar_ y ejecutar nuestro código.
@@ -44,15 +92,21 @@ La computadora no entiende (y por lo tanto no puede ejecutar) JavaScript directa
 
 Aparte de **V8**, tenemos el lenguaje **C++**, el cual, a traves de ciertas librerias que vienen con **Node** (como [libuv](https://github.com/libuv/libuv)), nos permiten acceder a _funcionalidad de más bajo nivel_ como las mencionadas antes e interactucar directamente con el sistema operativo. Para acceder a esa funcionalidad, vamos a utilizar la [**_API_**](https://nodejs.org/dist/latest-v12.x/docs/api/) que nos provee Node.
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### Operaciones I/O
 
 Las operaciones de I/O son aquellas que se producen cuando hay una comunicación entre una computadora y ciertos _periféricos_, como pueden ser una tarjeta de red ó un disco.
 
 Estas operaciones pueden consistir en, por ejemplo, intercambiar información a través de una red (networking) realizando requests, escuchar requests en cierto puerto y generar una respuesta, acceder a una base de datos ó realizar diversas acciones con el _filesystem_, como crear, leer y escribir archivos, copiar y pegar archivos, creary eliminar directorios, etc.
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### _Single-thread_
 
 **Las aplicaciones desarrolladas en Node corren en un único proceso (aka _thread_)**. Es decir, no crean un proceso nuevo por cada _request_. Node nos provee de muchos métodos de I/O asincrónicos a través de su _API_ que previenen que el código se _bloquee_. La mayoría de las librerías, módulos y frameworks de Node estan escritas utilizando el paradigma asincrónico, por lo que encontrar _código bloqueante o sincrónico_ es más bien la excepción y no la norma.
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ### _Non-blocking I/O_
 
@@ -62,11 +116,15 @@ Cuando Node realiza alguna [operación de I/O](), en lugar de bloquear el único
 
 Esto le permite a Node por ejemplo,poder manejar tranquilamente miles de conexiones concurrentes con un único servidor levantado (recordemos que operamos con un único proceso), lo cual nos proporciona un gran ahorro de recursos, hardware, etc y evitamos tener que lidiar con el manejo de _threads_ para la concurrencia, simplificando en gran medida y agilizando el desarrollo.
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### Entorno + API
 
 Por lo tanto, podríamos decir que **Node** termina siendo un _entorno de ejecución_ para poder correr código JavaScript y una _API_ (ó librería) que nos provee acceso a funcionalidades necesarias para el backend de nuestra aplicación.
 
 Gracias a esta API, Node nos permite construir desde pequeñas aplicaciones de línea de comandos (_CLI_), hasta _servidores HTTP_ para crear sitios dinámicos y aplicaciones web.
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ## REPL
 
@@ -84,6 +142,8 @@ console.log("Hello World");
 node helloworld.js
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ## Node nos permite escribir código _asincrónico_
 
 ```js
@@ -100,6 +160,8 @@ database.query("SELECT * FROM hugetable", function(rows) {
 console.log("Hello World");
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ## Leyendo argumentos
 
 Para leer argumentos a través de la terminal/CLI, podemos utilizar [`process.argv`](https://nodejs.org/docs/latest-v12.x/api/process.html#process_process_argv), que nos da acceso a un _Array_. Notar que este array también incluye como argumentos el comando que usamos para correr nuestro script y la ruta del archivo, por lo que los argumentos que nos interesan comienzan recién a partir del índice 2 del mismo, los cuales podemos obtener haciendo
@@ -111,6 +173,8 @@ const args = process.argv.slice(2);
 Para más info, ver [Node.js, accept arguments from the command line
 ](https://nodejs.dev/nodejs-accept-arguments-from-the-command-line)
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### Iterar argumentos
 
 ```js
@@ -119,6 +183,8 @@ process.argv.forEach((val, index) => {
 })
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ## File System
 
 Podemos usar Node para leer y escribir archivos, a través del módulo `fs`
@@ -126,6 +192,8 @@ Podemos usar Node para leer y escribir archivos, a través del módulo `fs`
 Ver [the File System module](https://eloquentjavascript.net/20_node.html#h_o2abiQU0TD)
 
 - Crear un archivo `readMe.txt` (en el mismo directorio donde tengamos nuestro `index.js`) con el contenido de [este txt](https://gist.githubusercontent.com/nhsz/8442053a20604ede482a2f4c506f83f9/raw/c6b51faf561a04211dcdfafc562f4f423dd4062b/payload.txt)
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ### Sync
 
@@ -140,6 +208,8 @@ const txt = readFileSync('readMe.txt', 'utf-8');
 console.log(txt);
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 #### Escribir un archivo
 
 - [`fs.writeFileSync`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_writefilesync_file_data_options)
@@ -153,6 +223,8 @@ writeFileSync('writeMe.txt', readMe);
 
 console.log(txt);
 ```
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ### Async
 
@@ -193,6 +265,8 @@ read('readMe.txt', 'utf-8', (err, data) => {
 console.log('HELLO!');
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 #### Borrar archivos
 
 :warning: **Sólo podemos eliminar archivos que existan, caso contrario `unlink` va a retornar un error**
@@ -214,13 +288,19 @@ del(filePath, err => {
 });
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 #### Copiar archivos
 
 Usar [`fs.copyFile`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_copyfile_src_dest_flags_callback) para copiar `'readMe.txt'` a `'readMeCopy.txt'`
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 #### Renombrar/mover archivos
 
 Usar [`fs.rename`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_rename_oldpath_newpath_callback) para renombrar `'readMeCopy.txt'` a `'readMe_copy.txt'`
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 #### Crear directorios
 
@@ -239,6 +319,8 @@ mkdir('node-fs', err => {
   })
 })
 ```
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 #### Crear directorio y mover un archivo
 
@@ -263,6 +345,8 @@ mkdir('node-fs', err => {
   move('readMe_copy.txt', 'node-fs/readMe_copy.txt');
 });
 ```
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 #### Borrar directorios
 
@@ -291,6 +375,8 @@ del('./node-fs/writeMe.txt', err => {
 })
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 #### Ejercicios
 
 1. Usar [`prepend-file`](https://www.npmjs.com/package/prepend-file) para agregar el texto 
@@ -307,7 +393,9 @@ al principio del texto del archivo y mostrar el resultado en la consola
 
 3. Escribir la función `ls` que tome como parámetro por consola un string que represente la ruta de un directorio local y loguee en consola los archivos del directorio. Investigar para esto el método [`fs.readdir`](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readdir_path_options_callback)
 
-## `path`
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+## Path
 
 El módulo `path`de Node es muy útil para trabajar con y manipular rutas (_paths_) de diferentes maneras.
 
@@ -326,6 +414,8 @@ console.log(path.resolve("first.js"));
 // Obtener la extensión de un archivo
 console.log(path.extname("main.js")); // .js
 ```
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 ## HTTP (Server y requests)
 
@@ -408,12 +498,22 @@ server.listen(port, hostname, () => {
 PORT=8888 node app.js
 ```
 
-#### Haciendo requests con Node
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+### Haciendo requests con Node
 
 Ver [Making HTTP requests with Node
 ](https://flaviocopes.com/node-make-http-requests/)
 
-#### Ejercicios
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+### Haciendo requests con `node-fetch`
+
+Ver [`node-fetch`](https://www.npmjs.com/package/node-fetch)
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+### Ejercicios
 
 **Tip:** Usar [`nodemon`](https://www.npmjs.com/package/nodemon) y crear el script `dev: nodemon index.js` en el `package.json` para correrlos
 
@@ -490,11 +590,9 @@ Luego, modificar el código del ítem anterior, para que como respuesta envíe e
 
 6. Modificar el `html` del ejercicio anterior para incluir [esta imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1180px-Node.js_logo.svg.png) con el nombre `node.png` en el mismo. La imagen debe estar en el proyecto, dentro de una carpeta `assets`. En el caso de que el servidor reciba un request a una ruta no definida, debe responder con un status `404` y el html `<h2>404 - Page not found :(</h2>`
 
-#### Haciendo requests con `node-fetch`
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
-Ver [`node-fetch`](https://www.npmjs.com/package/node-fetch)
-
-### Módulos 
+## Módulos 
 
 Los [_módulos_](http://thenodeway.io/introduction/#build-small-single-purpose-modules) forman parte de los bloques fundamentales que utilizamos en Node para construir aplicaciones. Como buena práctica, vamos a tratar siempre en lo posible de construir **módulos pequeños, con un propósito único y claro**.
 
@@ -504,7 +602,9 @@ Los módulos en Node se importan utilizando la función `require()`. **Para ser 
 
 - Ver [Node JS Tutorial for Beginners #7 - Module Patterns](https://www.youtube.com/watch?v=9UaZtgB5tQI)
 
-#### Módulos vs. paquetes
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+### Módulos vs. paquetes
 
 Un archivo js importado con `require()` es un _módulo_ pero no un _paquete_, porque no tiene un archivo `package.json`.
 
@@ -515,7 +615,9 @@ Un _paquete_ es una carpeta/directorio que contiene lo siguiente:
 - Un subdirectorio `node_modules`, que es la ubicación default donde Node va a buscar las dependencias del proyecto
 - El resto de los archivos que forman parte del código fuente de la aplicación
 
-#### Importar y exportar 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
+### Importar y exportar 
 
 ```js
 // In `greetings.js`, create three functions
@@ -539,11 +641,15 @@ console.log(greetings.flatter()); // "Look how gorgeous you are today!"
 
 - Ver más ejemplos en [_The HTTP Module_ - Eloquent JavaScript](https://eloquentjavascript.net/20_node.html#h_3O5dGIJE9F)
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### NPM
 
 - Crear `package.json` usando el comando `npm init`
 - ⚠️ Agregar `node_modules` al `.gitignore`
 - ⚠️ Los archivos `package.json` y [`package-lock.json`](https://dev.to/saurabhdaware/but-what-the-hell-is-package-lock-json-b04) **deben comitearse SIEMPRE!**
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
 
 #### NPM Cheatsheet
 
@@ -589,9 +695,13 @@ Desinstalar un módulo global
 npm uninstall -g <MODULE_NAME>
 ```
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
+
 ### NPX
 
 [_NPX_](https://nodejs.dev/the-npx-nodejs-package-runner) sirve para ejecutar ciertos comandos (fundamentalmente relacionados a CLIs) sin tener la necesidad de descargar e instalar un módulo en nuestro proyecto
 
 - [Using npx and npm scripts to Reduce the Burden of Developer Tools](https://dev.to/azure/using-npx-and-npm-scripts-to-reduce-the-burden-of-developer-tools-57f9)
 - [npx vs npm - THE npx ADVANTAGE](https://dev.to/sarscode/npx-vs-npm-the-npx-advantage-1h0o)
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-nodejs#contenido)
