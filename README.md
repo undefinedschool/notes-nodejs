@@ -11,7 +11,9 @@
 
 - [**Express**](https://github.com/undefinedschool/notes-expressjs)
 - [**APIs**](https://github.com/undefinedschool/notes-apis)
-- [**Bases de Datos**](https://github.com/undefinedschool/notes-dbs)
+- [**Bases De Datos - Intro**](https://github.com/undefinedschool/notes-dbs)
+- [**Bases de Datos - Relaciones**](https://github.com/undefinedschool/notes-dbs-relationships/)
+- [**SQL**](https://github.com/undefinedschool/notes-sql/)
 
 ### `async`
 
