@@ -1,24 +1,46 @@
-> El siguiente contenido fue elaborado por [@_nhsz](https://twitter.com/_nhsz) como guía para las clases de [undefined school](https://twitter.com/undefinedSchool)
-> Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc. 
-
-> 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
-
 # ![Notas sobre NodeJS (Server-Side JavaScript)](https://i.imgur.com/c6g1d9A.png)
 
-## Notas relacionadas
+<div align="center">  
+  <p align="center">
+  <sub>Hola! Soy Nico (<strong>nhsz</strong>), <strong>Dev Full Stack JavaScript y mentor</strong>.</sub>
+  </p>
+  
+  <p align="center">
+    <sub>
+      Hace un tiempo (principios de 2019) empecé un proyecto llamado <a href="https://undefinedschool.io"><strong>undefined school</strong></a>, una <strong>escuela de Desarrollo Web Full Stack JavaScript</strong>, 100% Open Source, con mentorías personalizadas para grupos reducidos y el foco puesto en los <strong>fundamentos</strong> y <strong>conceptos avanzados</strong>.
+    </sub>
+  </p>
 
-### `backend`
+  <p align="center">
+    <sub>
+      Me interesa mucho la intersección entre la educación y la tecnología, por eso también participo en proyectos como <a href="https://freecodecampba.org">freeCodeCampBA</a> (co-founder y co-organizador) y <a href="https://twitter.com/LXBA_">Learning Experience BA</a> (co-founder y co-organizador).
+    </sub>
+  </p>
 
-- [**Express**](https://github.com/undefinedschool/notes-expressjs)
-- [**APIs**](https://github.com/undefinedschool/notes-apis)
-- [**Bases De Datos - Intro**](https://github.com/undefinedschool/notes-dbs)
-- [**Bases de Datos - Relaciones**](https://github.com/undefinedschool/notes-dbs-relationships/)
-- [**SQL**](https://github.com/undefinedschool/notes-sql/)
+ <p align="center">
+    <sub>
+  👉 Si estás arrancando en el mundo del desarrollo web y necesitás una mano, podés encontrarme en <a href="https://twitter.com/_nhsz/">Twitter</a> (también para hablar sobre cualquier tema relacionado a JavaScript o <em>#nerdeadas</em> en general 😛).
+  </sub>
+  </p>
+  
+  <p align="center">
+  <sub>
+    Por último, te cuento que soy muy fan del café (obvio que negro y sin azúcar), asi que si las notas te resultaron útiles y querés colaborar para que no me quede dormido y siga escribiendo guías, apuntes y más <strong>contenido Open Source en español</strong>, podés invitarme uno, gracias! ❤️
+  </sub>
+  </p>
+  
+  <p align="center">
+  ☕
+  <code> 
+  <a href="https://cafecito.app/nhsz">
+    <strong>Invitame 1 café!</strong>
+  </a>
+  </code>
+  </p>
+  <hr>
+</div>
 
-### `async`
-
-- [**Event Loop**](https://github.com/undefinedschool/notes-event-loop)
-- [**Callbacks**](https://github.com/undefinedschool/notes-callbacks)
+👉 Ver [todas las notas](https://github.com/undefinedschool/notes)
 
 ## Contenido
 
